@@ -4,6 +4,7 @@ import { Input, Select } from 'antd';
 const OrderInformation = ({carrito, setCarrito}) => {
     const { Option } = Select;
     console.log(carrito)
+    
     const clientName = (e) => {
         let name = e.target.value;
         setCarrito({...carrito, nombreCliente: name})

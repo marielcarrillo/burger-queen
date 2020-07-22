@@ -2,17 +2,21 @@ import React from 'react';
 import { Table, Divider } from 'antd';
 import { DeleteTwoTone } from '@ant-design/icons'
 
+
 const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
 
   const carrito = {
     ...carritoOrig,
     item: carritoOrig.item.map(i => ({
       ...i,
+      
       item: i.item + ' ' + i.extras.filter(e => e.checked)
                                    .map(e => e.ingrediente)
                                    .join(', ')
+    
     }))
   }
+  console.log(carrito,'carritoO')
  
   
   const columns = [
@@ -26,8 +30,7 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
       title: 'Descripción',
       dataIndex: 'item',
       key: 'item',
-      width: 150,
-      fixed: 'left'
+      width: 150
     },
     {
       title: 'Precio',
@@ -55,7 +58,7 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
  
     
     return ( 
-        <div>
+        <div >
             <Divider />
             <Table className="contentTable" columns={columns} dataSource={carrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider />

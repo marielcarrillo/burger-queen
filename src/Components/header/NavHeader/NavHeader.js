@@ -4,7 +4,7 @@ import Button from '../../Button/Button';
 import { Link } from 'react-router-dom';
 
 const NavHeader = () => (
-    <div className='navHeader'>
+    <div role="navigation" className='navHeader'>
         <Link to ='/orden'>
             <Button value ='Orden' green />
         </Link>

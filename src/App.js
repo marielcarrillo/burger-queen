@@ -12,16 +12,18 @@ const App = () => {
         <Switch>
           <div className='app'>
             <div className='indexApp'>
-              <Route path ='/' exact component = {IndexApp} />
+              <Route key='index' path ='/' exact component = {IndexApp} />
             </div>
-            <div className= 'content'>
-              <Route path ='/orden' component={OrderSection}/>
-            </div>
-            <div>
-              <Route path= '/cocina' component= {KitchenSection}/>
-            </div>
-            <div>
-              <Route path = '/historial' component = {HistorialSection}/>
+            <div key='keycontent' className='content'>
+              <div >
+                <Route key='orden' path ='/orden' component={OrderSection}/>
+              </div>
+              <div>
+                <Route  key='cocina' path= '/cocina' component= {KitchenSection}/>
+              </div>
+              <div>
+                <Route  key='historial' path = '/historial' component = {HistorialSection}/>
+              </div>
             </div>    
           </div>
         </Switch>
