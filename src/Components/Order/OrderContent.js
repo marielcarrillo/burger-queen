@@ -60,7 +60,7 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
     return ( 
         <div >
             <Divider />
-            <Table className="contentTable" columns={columns} dataSource={carrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
+              <Table className="contentTable" columns={columns} dataSource={carrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider />
         </div>
      );

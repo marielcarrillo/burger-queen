@@ -1,6 +1,7 @@
 import React from 'react';
 import logoSmall from '../../Assets/logoSmall.png'
 import logo from '../../Assets/logoPrim.png'
+import { useHistory } from 'react-router-dom'
 
 const Logo = ({ small = false, big = false}) => {
     let src = logo
@@ -12,9 +13,15 @@ const Logo = ({ small = false, big = false}) => {
         src = logoSmall
         alt= logoSmall
     }
+
+    let history = useHistory()
+
+    function handleClick() {
+        history.push('/')
+    }
    
     return(
-            <img src= {src} alt={alt}></img>
+            <img src= {src} alt={alt} onClick={handleClick}></img>
     )
   
 }

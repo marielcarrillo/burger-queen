@@ -1,19 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import Logo from '../Logo/Logo';
 import NavHeader from '../Header/NavHeader/NavHeader';
 import '../Header/Header.scss'
 
-const Header = () => (
+
+const Header = () => {
+
+    return(
     <div className = 'containerHeader'>
-        <NavHeader />
+        <div className='navHeader'>
+         <NavHeader /> 
+        </div>
         <div className='containerLogo'> 
-            <Link to ='/'>
+
                 <Logo className='logo' small />
-            </Link>
+
         </div>
     </div>
+    )
   
-)
+}
 
 export default Header;

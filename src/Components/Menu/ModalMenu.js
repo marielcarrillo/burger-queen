@@ -97,9 +97,10 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     }
 
     return (
-      <div className='modal1'>
+      <div className='modal1' key={item.id}>
       <Button mas onClick={showModal} />
           <Modal
+              key = {item.id}
               className='modal'
               visible={state.visible}
               onOk={addToOrder}

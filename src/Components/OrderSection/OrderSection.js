@@ -5,7 +5,7 @@ import IndexMenu from '../Menu/IndexMenu'
 import Header from '../Header/Header'
 
 const OrderSection = () => {
-  let [carrito,setCarrito]=useState({
+  let [carrito, setCarrito]= useState({
     nombreCliente:"",
     total:0,
     item:[],
@@ -25,11 +25,13 @@ const OrderSection = () => {
   }
   
   return ( 
+    <>
+    <Header />
     <Row className= 'content' justify='space-around'>
-      <Header />
       <IndexMenu carrito={carrito} addProducto={addProducto} setCarrito={setCarrito} />
       <Order carrito={carrito} setCarrito={setCarrito} deleteProducto={deleteProducto} />
-    </Row>      
+    </Row> 
+    </>     
   );
   }
    

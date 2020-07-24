@@ -6,28 +6,31 @@ import KitchenSection from './Components/KitchenSection/kitchenSection'
 import HistorialSection from './Components/HistorialSection/HistorialSection'
 import '../src/App.scss';
 
+
 const App = () => {
+
   return ( 
     <Router>
         <Switch>
           <div className='app'>
-            <div className='indexApp'>
-              <Route key='index' path ='/' exact component = {IndexApp} />
-            </div>
-            <div key='keycontent' className='content'>
+              <div className='indexApp'>
+                <Route  path ='/' exact component = {IndexApp} />
+              </div>
+            <div  className='content'>
               <div >
-                <Route key='orden' path ='/orden' component={OrderSection}/>
+                <Route  path ='/orden' component={OrderSection}/>
               </div>
               <div>
-                <Route  key='cocina' path= '/cocina' component= {KitchenSection}/>
+                <Route   path= '/cocina' component= {KitchenSection}/>
               </div>
               <div>
-                <Route  key='historial' path = '/historial' component = {HistorialSection}/>
+                <Route  path = '/historial' component = {HistorialSection}/>
               </div>
             </div>    
           </div>
         </Switch>
     </Router>
+    
     
    
    );
