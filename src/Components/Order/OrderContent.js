@@ -2,19 +2,7 @@ import React from 'react';
 import { Table, Divider } from 'antd';
 import { DeleteTwoTone } from '@ant-design/icons'
 
-const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
-
-  const carrito = {
-    ...carritoOrig,
-    item: carritoOrig.item.map(i => ({
-      ...i,
-      item: i.item + ' ' + i.extras.filter(e => e.checked)
-                                   .map(e => e.ingrediente)
-                                   .join(', ')
-    }))
-  }
- 
-  
+const OrderContent = ({nuevoCarrito, deleteProducto}) => { 
   const columns = [
     {
       title: 'Cant',
@@ -51,12 +39,10 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
     },
   ];
 
- 
-    
     return ( 
         <div>
             <Divider />
-            <Table className="contentTable" columns={columns} dataSource={carrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
+            <Table className="contentTable" columns={columns} dataSource={nuevoCarrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider />
         </div>
      );
