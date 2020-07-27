@@ -1,13 +1,14 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import { Link } from 'react-router-dom';
 import '../IndexApp/IndexApp.scss'; 
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
-
+import Header from '../Header/Header'
 
 
 function IndexApp () {
     return (
+        <Fragment><Header />
         <div className="container">
             <div className = 'logo'>
                 <Logo big/> 
@@ -28,6 +29,7 @@ function IndexApp () {
             </div> 
             
         </div>
+        </Fragment>
       );
 }
 

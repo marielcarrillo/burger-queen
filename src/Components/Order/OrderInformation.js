@@ -1,17 +1,10 @@
 import React from 'react';
 import { Input, Select } from 'antd';
 
-const OrderInformation = ({carrito, setCarrito}) => {
+const OrderInformation = ({carrito, clientName, handleChange}) => {
     const { Option } = Select;
     console.log(carrito)
-    const clientName = (e) => {
-        let name = e.target.value;
-        setCarrito({...carrito, nombreCliente: name})
-    }
-    function handleChange(value) {
-        setCarrito({...carrito,mesa: value})
-        console.log(`selected ${value}`);
-    }
+
     return ( 
         <div>
             <Select placeholder="Mesa" style={{ width: 175 }} onChange={handleChange}>
