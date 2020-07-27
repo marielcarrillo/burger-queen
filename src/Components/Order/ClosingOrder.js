@@ -24,16 +24,6 @@ const ClosingOrder = ({carrito, setCarrito}) => {
         console.log(`selected ${value}`);
     }
 
-    // const addToFirebase = docRef.add({
-    //     item: carrito.item,
-    //     mesa: carrito.mesa,
-    //     mesero: carrito.mesero,
-    //     nombreCliente:  carrito.nombreCliente,
-    //     orden: carrito.orden,
-    //     pay: carrito.pay,
-    //     status: carrito.status,
-    //     total: carrito.total
-    // })
 
     return ( 
         <div>

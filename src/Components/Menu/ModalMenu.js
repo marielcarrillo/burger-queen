@@ -46,6 +46,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
 
   function useQuantity(defaultQuantity) {
     const [value, setValue] = useState(defaultQuantity || 1);
+    
     function onChange(e) {
       if (!(+e.target.value >= 1)) {
         setValue(1);

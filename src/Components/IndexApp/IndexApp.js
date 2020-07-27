@@ -1,12 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import '../IndexApp/IndexApp.scss'; 
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
+import { useHistory } from "react-router-dom";
 
 
 
 function IndexApp () {
+    let history = useHistory()
+
+    function handleClickOrden() {
+
+        history.push('/orden')
+    }
+    function handleClickCocina() {
+
+        history.push('/cocina')
+    }
     return (
         <div className="container">
             <div className = 'logo'>
@@ -14,12 +24,8 @@ function IndexApp () {
             </div>       
             <nav>
                 <ul>
-                    <Link to ='/orden'>
-                        <li><Button value = 'Orden' pink /></li>
-                    </Link>
-                    <Link to = '/cocina'>
-                        <li><Button value = 'Cocina'/></li>
-                    </Link>
+                        <li><Button value = 'Orden' pink onClick={handleClickOrden} /></li>
+                        <li><Button value = 'Cocina' onClick={handleClickCocina}/></li>
                 </ul>
             </nav>
             <div className='auth'>
