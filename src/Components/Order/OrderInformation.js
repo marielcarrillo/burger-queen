@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Select } from 'antd';
 
-const OrderInformation = ({carrito, setCarrito}) => {
+const OrderInformation = ({carrito, clientName, handleChange}) => {
     const { Option } = Select;
     console.log(carrito)
     

@@ -18,6 +18,7 @@ function IndexApp () {
         history.push('/cocina')
     }
     return (
+        <Fragment><Header />
         <div className="container">
             <div className = 'logo'>
                 <Logo big/> 
@@ -34,6 +35,7 @@ function IndexApp () {
             </div> 
             
         </div>
+        </Fragment>
       );
 }
 

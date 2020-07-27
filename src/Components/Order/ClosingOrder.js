@@ -1,33 +1,15 @@
 import React from 'react';
-import { Input, Select, DatePicker, Divider } from 'antd';
+import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
-import {db} from '../../firebase'
+import moment from 'moment';
 
-const ClosingOrder = ({carrito, setCarrito}) => {
-    const suma = () => {
-        let costs = carrito.item.map(item => item.subtotal);
-        let result = costs.reduce((acc, el) => acc + el, 0);
-        // setCarrito({...carrito, total: result})
-        return result;
-      }
-
-    const guardar = async () => {
-        await setCarrito({...carrito, total: suma()});
-        await db.collection('orders').doc().set(carrito);
-        console.log('added')
-    }
-
+const ClosingOrder = ({total, guardar, mesero}) => {
     const { Option } = Select;
-
-    const mesero = (value) => {
-        setCarrito({...carrito, mesero: value})
-        console.log(`selected ${value}`);
-    }
 
     return ( 
         <div>
             <div className='btnOrder'>
-                <h4>Total: ${suma()}</h4>
+                <h4>Total: ${total}</h4>
                 <Button value ='Ordenar' enter onClick={guardar}/>
             </div>
             <div>
@@ -37,7 +19,7 @@ const ClosingOrder = ({carrito, setCarrito}) => {
                         <Option value="Mesero1">Mesero 1</Option>
                         <Option value="Mesero2">Mesero 2</Option>
                     </Select>
-                    <DatePicker style={{ width: '50%' }} />
+                    <Input style={{ width: '50%' }} disabled value={moment().format('D, MMM, Y')}/>
                 </Input.Group>
             </div>
         </div>

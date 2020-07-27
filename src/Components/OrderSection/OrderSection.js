@@ -3,6 +3,7 @@ import { Row } from 'antd'
 import Order from '../Order/Order'
 import IndexMenu from '../Menu/IndexMenu'
 import Header from '../Header/Header';
+import {db} from '../../firebase';
 
 const OrderSection = () => {
   let [carrito, setCarrito]= useState({
@@ -23,6 +24,38 @@ const OrderSection = () => {
   const deleteProducto = (id) => {
     setCarrito({...carrito, item: carrito.item.filter(item => item.id !== id)})
   }
+
+  const suma = () => {
+    let costs = carrito.item.map(item => item.subtotal);
+    let result = costs.reduce((acc, el) => acc + el, 0);
+    carrito.total = result;
+    return result;
+  }
+  let total = suma();
+
+  const guardar = async () => {
+    carrito.fecha = Date.now()
+    await db.collection('orders').doc().set(carrito);
+    console.log('added to firestore')
+}
+const clientName = (e) => {
+  let name = e.target.value;
+  setCarrito({...carrito, nombreCliente: name})
+}
+function handleChange(value) {
+  setCarrito({...carrito,mesa: value})
+  console.log(`selected ${value}`);
+}
+
+const nuevoCarrito = {
+  ...carrito,
+  item: carrito.item.map(i => ({
+    ...i,
+    item: i.item + ' ' + i.extras.filter(e => e.checked)
+                                 .map(e => e.ingrediente)
+                                 .join(', ')
+  }))
+}
   
   return ( 
     <>

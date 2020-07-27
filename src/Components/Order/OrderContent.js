@@ -55,8 +55,6 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
     },
   ];
 
- 
-    
     return ( 
         <div >
             <Divider />
