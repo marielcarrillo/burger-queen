@@ -1,7 +1,8 @@
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
-
-let firebaseConfig = {
+// Your web app's Firebase configuration
+var firebaseConfig = {
     apiKey: "AIzaSyAHDpWgoaHzh7b5P8YhdrSnDNvlfg_VY-4",
     authDomain: "burgerqueen-d2dca.firebaseapp.com",
     databaseURL: "https://burgerqueen-d2dca.firebaseio.com",
@@ -12,10 +13,5 @@ let firebaseConfig = {
     measurementId: "G-8HYFSYX7PB"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  //firebase.analytics();
-
-  export default firebaseConfig
-
-
- 
+  const fb = firebase.initializeApp(firebaseConfig);
+  export const db = fb.firestore();

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Row } from 'antd'
 import Order from '../Order/Order'
 import IndexMenu from '../Menu/IndexMenu'
-import Header from '../Header/Header'
+import Header from '../Header/Header';
 
 const OrderSection = () => {
   let [carrito, setCarrito]= useState({
@@ -12,7 +12,7 @@ const OrderSection = () => {
     status:false,
     pay:false,
     mesa:"",
-    orden: "",
+    orden: (""+Math.random()).substring(2,7),
     mesero: ""
   })
 

@@ -1,22 +1,22 @@
 import React from 'react';
 import { Input, Select, DatePicker, Divider } from 'antd';
 import Button from '../Button/Button';
-// import firebaseConfig from '../../firebase'
-// import 'firebase/firestore'
-
-
+import {db} from '../../firebase'
 
 const ClosingOrder = ({carrito, setCarrito}) => {
-    // const db = firebaseConfig.firestore()
-    // const docRef = db.collection('ordenes');
-
     const suma = () => {
         let costs = carrito.item.map(item => item.subtotal);
         let result = costs.reduce((acc, el) => acc + el, 0);
         // setCarrito({...carrito, total: result})
         return result;
       }
-    
+
+    const guardar = async () => {
+        await setCarrito({...carrito, total: suma()});
+        await db.collection('orders').doc().set(carrito);
+        console.log('added')
+    }
+
     const { Option } = Select;
 
     const mesero = (value) => {
@@ -24,12 +24,11 @@ const ClosingOrder = ({carrito, setCarrito}) => {
         console.log(`selected ${value}`);
     }
 
-
     return ( 
         <div>
             <div className='btnOrder'>
                 <h4>Total: ${suma()}</h4>
-                <Button value ='Ordenar' enter onClick={()=>setCarrito({...carrito, total: suma()}) }/>
+                <Button value ='Ordenar' enter onClick={guardar}/>
             </div>
             <div>
                 <Divider />

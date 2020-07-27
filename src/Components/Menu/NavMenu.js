@@ -76,7 +76,7 @@ let Comidas=[
         precio: 5,
         imagen: "../Products/cebolla.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 9,

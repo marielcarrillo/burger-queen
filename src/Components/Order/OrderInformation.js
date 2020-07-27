@@ -21,7 +21,7 @@ const OrderInformation = ({carrito, setCarrito}) => {
                 <Option value="Mesa3" >Mesa 3</Option>
                 <Option value="Mesa4">Mesa 4</Option>
             </Select>
-            <Input placeholder="Orden" style={{ width: 175 }} />
+            <Input placeholder="Orden" disabled style={{ width: 175 }} value={'Orden: ' + carrito.orden} />
             <Input placeholder="Nombre" onChange={clientName} />
         </div>
      );
