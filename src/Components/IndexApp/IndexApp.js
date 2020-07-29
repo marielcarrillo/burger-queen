@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import '../IndexApp/IndexApp.scss'; 
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
@@ -18,7 +18,7 @@ function IndexApp () {
         history.push('/cocina')
     }
     return (
-        <Fragment><Header />
+        <Fragment>
         <div className="container">
             <div className = 'logo'>
                 <Logo big/> 

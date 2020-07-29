@@ -18,6 +18,7 @@ const Pendings = () => {
         getOrders();
     }, [])
     console.log(orders)
+ 
 
     return ( 
         <Col className='order' size='large' span={14}>

@@ -36,13 +36,15 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         newExtras[i].checked = !newExtras[i].checked;
         setExtras(newExtras)
     }
+   
     return {
         checkExtra,
         extras
+       
     }
-
-   
+  
 }
+
 
   function useQuantity(defaultQuantity) {
     const [value, setValue] = useState(defaultQuantity || 1);

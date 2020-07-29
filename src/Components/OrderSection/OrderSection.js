@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import {db} from '../../firebase';
 
 const OrderSection = () => {
-  let [carrito, setCarrito]= useState({
+  let [carrito,setCarrito]=useState({
     nombreCliente:"",
     total:0,
     item:[],
@@ -58,13 +58,11 @@ const nuevoCarrito = {
 }
   
   return ( 
-    <>
-    <Header />
     <Row className= 'content' justify='space-around'>
+      <Header />
       <IndexMenu carrito={carrito} addProducto={addProducto} setCarrito={setCarrito} />
-      <Order carrito={carrito} setCarrito={setCarrito} deleteProducto={deleteProducto} />
-    </Row> 
-    </>     
+      <Order carrito={carrito} setCarrito={setCarrito} deleteProducto={deleteProducto} total={total} guardar={guardar} clientName={clientName} handleChange={handleChange} nuevoCarrito={nuevoCarrito}/>
+    </Row>      
   );
   }
    

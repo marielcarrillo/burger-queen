@@ -8,6 +8,13 @@ import {db} from '../../firebase';
 const KitchenSection = () =>{
     const [orders, setOrders] = useState([]);
 
+    function addToOrder () {
+        getOrders();
+       let arr = orders.map(order => order)
+       return arr
+
+      }
+
     const getOrders = () => {
         db.collection('orders').onSnapshot((querySnapshot) => {
             const docs = [];
@@ -25,7 +32,7 @@ const KitchenSection = () =>{
         <>
             <Header/>
             <Pendings />
-            {/* <Order carrito={orders} deleteProducto={orders} guardar={orders} /> */}
+            <Order carrito={addToOrder} /> 
         </>
     )
 }
