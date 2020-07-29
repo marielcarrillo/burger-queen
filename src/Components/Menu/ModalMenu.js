@@ -21,7 +21,6 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     }))
 }
 
-
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
   const extras = useExtras(carrito.item.extras)
 
@@ -42,23 +41,21 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         extras
        
     }
-  
 }
 
 
   function useQuantity(defaultQuantity) {
-    const [value, setValue] = useState(defaultQuantity || 1);
-    
+    const [value, setvalue] = useState(defaultQuantity || 1);
     function onChange(e) {
       if (!(+e.target.value >= 1)) {
-        setValue(1);
+        setvalue(1);
         return;
       }
-      setValue(+e.target.value);
+      setvalue(+e.target.value);
     }
     return {
       value,
-      setValue,
+      setvalue,
       onChange
     };
   };
@@ -119,9 +116,9 @@ const ModalMenu = ({item, carrito, addProducto}) => {
               <h2>{item.item}</h2>            
               <div className='quantityDiv'>
                 <h5>Cantidad</h5>
-                <button onClick={() => {quantity.setValue(quantity.value - 1)}}>-</button>
+                <button onClick={() => {quantity.setvalue(quantity.value - 1)}}>-</button>
                 <input  className= 'inputQuantity' {...quantity}></input>
-                <button onClick={() => {quantity.setValue(quantity.value + 1)}}>+</button>
+                <button onClick={() => {quantity.setvalue(quantity.value + 1)}}>+</button>
               </div>
               {hasExtras(item) && <>
                 <h4>Agregar Extras:</h4>

@@ -1,21 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { Row } from 'antd'
 import Header from '../Header/Header';
 import Pendings from './Pendings';
 import './Kitchen.scss';
-import Order from '../Order/Order';
 import {db} from '../../firebase';
+import Order from '../Order/Order';
 
 const KitchenSection = () =>{
     const [orders, setOrders] = useState([]);
 
-    function addToOrder () {
-        getOrders();
-       let arr = orders.map(order => order)
-       return arr
-
-      }
-
-    const getOrders = () => {
+    const getOrders = async () => {
         db.collection('orders').onSnapshot((querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
@@ -27,13 +21,21 @@ const KitchenSection = () =>{
     useEffect(() => {
         getOrders();
     }, [])
+    
+    console.log(orders)
+    const [ordenSeleccionada, setOrdenSeleccionada] = useState ({})
+    const getSelectedOrder = (id) => {
+    let getDocument = db.collection('orders').doc(id);
+    getDocument.get().then((doc) => doc.exists ? setOrdenSeleccionada({...doc.data()}) : console.log('no se encuentra el documento'))
+    }
+    console.log(ordenSeleccionada);
 
     return(
-        <>
+        <Row className= 'content' justify='space-around'>
             <Header/>
-            <Pendings />
-            <Order carrito={addToOrder} /> 
-        </>
+            <Pendings orders={orders} getSelectedOrder={getSelectedOrder} />
+            <Order ordenSeleccionada={ordenSeleccionada} />
+        </Row>
     )
 }
 
