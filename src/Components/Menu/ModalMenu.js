@@ -32,7 +32,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     
     function checkExtra(i){
         const newExtras = [...extras];
-        newExtras[i].checked = !newExtras[i].checked;
+        newExtras[i] = { ...newExtras[i], checked: !newExtras[i].checked}
         setExtras(newExtras)
     }
    
@@ -117,7 +117,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
               <div className='quantityDiv'>
                 <h5>Cantidad</h5>
                 <button onClick={() => {quantity.setvalue(quantity.value - 1)}}>-</button>
-                <input  className= 'inputQuantity' {...quantity}></input>
+                <input  className= 'inputQuantity' onChange={quantity.onChange} value={quantity.value}></input>
                 <button onClick={() => {quantity.setvalue(quantity.value + 1)}}>+</button>
               </div>
               {hasExtras(item) && <>

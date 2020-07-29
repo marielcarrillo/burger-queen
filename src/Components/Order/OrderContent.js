@@ -38,14 +38,40 @@ const OrderContent = ({nuevoCarrito, deleteProducto, ordenSeleccionada}) => {
       width: 30
     },
   ];
-
+  const deleteTrashColumn = [
+    {
+      title: 'Cant',
+      dataIndex: 'quantity',
+      key: 'quantity',
+      width: 50
+    },
+    {
+      title: 'Descripción',
+      dataIndex: 'item',
+      key: 'item',
+      width: 150
+    },
+    {
+      title: 'Precio',
+      dataIndex: 'precio',
+      key: 'precio',
+      width: 60
+    },
+    {
+      title: 'Sub',
+      key: 'subtotal',
+      dataIndex:'subtotal',
+      width: 60
+    }
+  ];
+  console.log(nuevoCarrito?.item, ordenSeleccionada?.item)
     return ( 
         <div>
             {
-              ordenSeleccionada ? (<><Divider /><Table className="contentTable" columns={columns} dataSource={ordenSeleccionada.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
+              ordenSeleccionada ? (<><Divider /><Table className="contentTable" columns={deleteTrashColumn} dataSource={ordenSeleccionada.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider /></>) 
             : 
-            (<><Divider /><Table className="contentTable" columns={columns} dataSource={nuevoCarrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
+            (<><Divider /><Table className="contentTable" columns={columns} dataSource={nuevoCarrito.item.map(i => ({ ...i, key: i.id }))} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider /></>)
             }
 
