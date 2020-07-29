@@ -1,9 +1,12 @@
 import React from 'react';
+import { Row } from 'antd';
 import Header from '../Header/Header'
 
 const HistorialSection = () =>{
     return(
-        <Header/>
+        <Row className= 'content' justify='space-around'>
+            <Header/>
+        </Row>
     )
 }
 
