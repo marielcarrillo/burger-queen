@@ -5,7 +5,8 @@ import shortid from 'shortid';
 import Extras from '../Menu/Extras'
 
 
-const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
+const ModalMenu = ({item, carrito, addProducto}) => {
+  
   const extrasList = [
     "Queso",
     "Pepperoni",
@@ -23,7 +24,8 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
   const extras = useExtras(carrito.item.extras)
 
-  function useExtras(defaultExtra){
+  function useExtras(defaultExtra, carrito){
+    
     const [ extras, setExtras] = useState(
       defaultExtra || getDefaultExtras()
     )
@@ -33,11 +35,14 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
         newExtras[i].checked = !newExtras[i].checked;
         setExtras(newExtras)
     }
+   
     return {
         checkExtra,
         extras
+       
     }
 }
+
 
   function useQuantity(defaultQuantity) {
     const [value, setvalue] = useState(defaultQuantity || 1);
@@ -92,9 +97,10 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
     }
 
     return (
-      <div className='modal1'>
+      <div className='modal1' key={item.id}>
       <Button mas onClick={showModal} />
           <Modal
+              key = {item.id}
               className='modal'
               visible={state.visible}
               onOk={addToOrder}
@@ -103,8 +109,8 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
                 <Button id='btnAgregar' value='Agregar' enter key="submit" type="primary" onClick={addToOrder}/>
               ]}
           >
-            <Col>
-              <Row justify="center">
+            <Col key="col">
+              <Row key="row" justify="center">
                 <img src={item.imagen} alt='cafe' />
               </Row>
               <h2>{item.item}</h2>            

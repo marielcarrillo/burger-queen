@@ -14,7 +14,7 @@ const OrderContent = ({nuevoCarrito, deleteProducto, ordenSeleccionada}) => {
       title: 'Descripción',
       dataIndex: 'item',
       key: 'item',
-      width: 150,
+      width: 150
     },
     {
       title: 'Precio',

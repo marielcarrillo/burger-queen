@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, Col } from 'antd';
 import ModalMenu from './ModalMenu';
 
-const CardMenu = ({item,  carrito, addProducto}) => {
+
+const CardMenu = ({item,  carrito, addProducto }) => {
     const { Meta } = Card;
     return ( 
         <Col span={12}>

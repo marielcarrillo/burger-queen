@@ -9,6 +9,7 @@ let Desayunos=[
         imagen: "./Products/cafe.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     },
     {
         id: 2,
@@ -17,6 +18,7 @@ let Desayunos=[
         imagen: "./Products/cafeLeche.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     },
     {
         id: 3,
@@ -25,6 +27,8 @@ let Desayunos=[
         imagen: "./Products/sandwich.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
+
     },
     {
         id: 4,
@@ -33,6 +37,7 @@ let Desayunos=[
         imagen: "./Products/jugo.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     }
 ]
 
@@ -62,6 +67,8 @@ let Comidas=[
         imagen: "../Products/papas.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
+
     },
     {
         id: 8,
@@ -78,6 +85,7 @@ let Comidas=[
         imagen: "../Products/jugo.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     },
     {
         id: 10,
@@ -86,6 +94,7 @@ let Comidas=[
         imagen: "../Products/jugo.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     },
     {
         id: 11,
@@ -94,6 +103,7 @@ let Comidas=[
         imagen: "../Products/refresco.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     },
     {
         id: 12,
@@ -102,6 +112,7 @@ let Comidas=[
         imagen: "../Products/refresco.png",
         quantity:1,
         subtotal:0,
+        extras: 'none'
     }
 ]
 
