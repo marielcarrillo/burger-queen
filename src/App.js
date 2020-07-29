@@ -12,20 +12,20 @@ const App = () => {
     
       <Router>
           <Switch>
-            <div className='app'>
-              <div className='indexApp'>
+            <Fragment>
+              <Fragment>
                 <Route path ='/' exact component = {IndexApp} />
-              </div>
-              <div className= 'content'>
+              </Fragment>
+              <Fragment>
                 <Route path ='/orden' component={OrderSection}/>
-              </div>
-              <div>
+              </Fragment>
+              <Fragment>
                 <Route path= '/cocina' component= {KitchenSection}/>
-              </div>
-              <div>
+              </Fragment>
+              <Fragment>
                 <Route path = '/historial' component = {HistorialSection}/>
-              </div>    
-            </div>
+              </Fragment>    
+            </Fragment>
           </Switch>
       </Router>
     </Fragment>
