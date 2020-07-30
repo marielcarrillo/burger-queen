@@ -46,7 +46,7 @@ function handleChange(value) {
   setCarrito({...carrito,mesa: value})
   console.log(`selected ${value}`);
 }
-
+console.log(carrito.item)
 const nuevoCarrito = {
   ...carrito,
   item: carrito.item.map(i => ({
