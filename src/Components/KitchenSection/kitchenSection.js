@@ -10,7 +10,8 @@ const KitchenSection = () =>{
     const [orders, setOrders] = useState([]);
 
     const getOrders = async () => {
-        db.collection('orders').onSnapshot((querySnapshot) => {
+        let pendingOrders = db.collection('orders').where("status", "==", false);
+        pendingOrders.onSnapshot((querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id: doc.id})
@@ -18,25 +19,38 @@ const KitchenSection = () =>{
             setOrders(docs);
         });
     }
+
     useEffect(() => {
         getOrders();
     }, [])
     
     console.log(orders)
     const [ordenSeleccionada, setOrdenSeleccionada] = useState ({})
+
     const getSelectedOrder = (id) => {
     let getDocument = db.collection('orders').doc(id);
-    getDocument.get().then((doc) => doc.exists ? setOrdenSeleccionada({...doc.data()}) : console.log('no se encuentra el documento'))
+    getDocument.get().then((doc) => doc.exists ? setOrdenSeleccionada({...doc.data(), id: doc.id}) : console.log('no se encuentra el documento'))
     }
     console.log(ordenSeleccionada);
+
+    const finishOrder = () => {
+        db.collection('orders').doc(ordenSeleccionada.id).update({
+            status: 'finalizado'
+        }).then(() => {
+            console.log("Document successfully updated!");
+        })
+        .catch((error) => {
+            console.error("Error updating document: ", error);
+        });
+    }
 
     return(
         <Row className= 'content' justify='space-around'>
             <Header/>
             <Pendings orders={orders} getSelectedOrder={getSelectedOrder} />
-            <Order ordenSeleccionada={ordenSeleccionada} />
+            <Order ordenSeleccionada={ordenSeleccionada} finishOrder={finishOrder} />
         </Row>
     )
 }
 
-export default KitchenSection
+export default KitchenSection;

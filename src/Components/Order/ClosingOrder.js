@@ -3,7 +3,7 @@ import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
 import moment from 'moment';
 
-const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada}) => {
+const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder}) => {
     const { Option } = Select;
 
     return ( 
@@ -11,7 +11,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada}) => {
             {
                 ordenSeleccionada ? (<div className='btnOrder'>
                 <h4>Total: ${ordenSeleccionada.total}</h4>
-                <Button value ='Terminar' enter onClick={() => console.log('terminado')}/>
+                <Button value ='Terminar' enter onClick={finishOrder}/>
             </div>) 
             : 
             (<div className='btnOrder'>
