@@ -28,7 +28,7 @@ const KitchenSection = () =>{
     let getDocument = db.collection('orders').doc(id);
     getDocument.get().then((doc) => doc.exists ? setOrdenSeleccionada({...doc.data()}) : console.log('no se encuentra el documento'))
     }
-    console.log(ordenSeleccionada);
+    
 
     return(
         <Row className= 'content' justify='space-around'>
