@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: scroll;
 }
 .pendingOrders {
     width: 100%;
@@ -9,4 +10,8 @@
 }
 .pendingOrderButton {
     width: 100%;
+}
+h3{
+    display: flex;
+    justify-content: center;
 }

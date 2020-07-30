@@ -20,15 +20,13 @@ const NavHeader = () => {
     }
    
    return(
-    <div className='navHeader'> 
-            <Button value ='Orden' green onClick = {handleClickOrden} />
+    <> 
+            <Button  value ='Orden' green onClick = {handleClickOrden} />
 
            <Button value ='Cocina' green onClick = {handleClickCocina} /> 
 
-            <Button value ='Historial' green onClick = {handleClickHistorial} /> 
-
-       
-    </div>
+            <Button value ='Historial' green onClick = {handleClickHistorial} />     
+    </>
    )
 }
 

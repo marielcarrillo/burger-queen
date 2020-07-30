@@ -8,12 +8,12 @@ const Extras = ({extras, checkExtra}) => {
     return(
         <div>
             {extras.map((extra, i)=>(
-               <form>
+               <form key = {extra.ingrediente}>
                   <span>{extra.ingrediente}</span>
                 <input 
                   checked = {extra.checked} 
                   type= 'checkbox'   
-                  onClick={()=>{ 
+                  onChange={()=>{ 
                     checkExtra(i)
                   
                   }}>
