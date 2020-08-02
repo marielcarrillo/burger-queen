@@ -68,7 +68,7 @@ const OrderContent = ({nuevoCarrito, deleteProducto, ordenSeleccionada}) => {
     return ( 
         <div>
             {
-              ordenSeleccionada ? (<><Divider /><Table className="contentTable" columns={deleteTrashColumn} dataSource={ordenSeleccionada.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
+              ordenSeleccionada  ? (<><Divider /><Table className="contentTable" columns={deleteTrashColumn} dataSource={ordenSeleccionada.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider /></>) 
             : 
             (<><Divider /><Table className="contentTable" columns={columns} dataSource={nuevoCarrito.item.map(i => ({ ...i, key: i.id }))} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
