@@ -31,7 +31,7 @@ const KitchenSection = () =>{
     let getDocument = db.collection('orders').doc(id);
     getDocument.get().then((doc) => doc.exists ? setOrdenSeleccionada({...doc.data(), id: doc.id}) : console.log('no se encuentra el documento'))
     }
-    console.log(ordenSeleccionada);
+    
 
     const finishOrder = () => {
         db.collection('orders').doc(ordenSeleccionada.id).update({

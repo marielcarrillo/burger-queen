@@ -116,7 +116,10 @@ const ModalMenu = ({item, carrito, addProducto}) => {
               <h2>{item.item}</h2>            
               <div className='quantityDiv'>
                 <h5>Cantidad</h5>
-                <button onClick={() => {quantity.setvalue(quantity.value - 1)}}>-</button>
+                <button onClick={() => {
+                  quantity.setvalue(quantity.value - 1)}}
+                  disabled={quantity.value === 1}
+                  >- </button>
                 <input  className= 'inputQuantity' onChange={quantity.onChange} value={quantity.value}></input>
                 <button onClick={() => {quantity.setvalue(quantity.value + 1)}}>+</button>
               </div>
