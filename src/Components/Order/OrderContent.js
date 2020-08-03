@@ -65,18 +65,6 @@ const OrderContent = ({nuevoCarrito, deleteProducto, ordenSeleccionada, historia
     }
   ];
   console.log(nuevoCarrito?.item, ordenSeleccionada?.item)
-<<<<<<< HEAD
-    return ( 
-        <div>
-            {
-              ordenSeleccionada  ? (<><Divider /><Table className="contentTable" columns={deleteTrashColumn} dataSource={ordenSeleccionada.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
-            <Divider /></>) 
-            : 
-            (<><Divider /><Table className="contentTable" columns={columns} dataSource={nuevoCarrito.item.map(i => ({ ...i, key: i.id }))} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
-            <Divider /></>)
-            }
-=======
->>>>>>> 32bd3cb7b075f6358810efe83392b84bb66a4374
 
   if (ordenSeleccionada) {
     return (
