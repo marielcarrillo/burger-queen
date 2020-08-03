@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
-import moment from 'moment';
 
 const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
     const { Option } = Select;
@@ -51,7 +50,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
                         <Option value="Mesero1">Mesero 1</Option>
                         <Option value="Mesero2">Mesero 2</Option>
                     </Select>
-                    <Input style={{ width: '50%' }} disabled value={moment().format('D, MMM, Y')}/>
+                    <Input style={{ width: '50%' }} disabled value={Date.now()}/>
                 </Input.Group>
             </div>
         </div>
