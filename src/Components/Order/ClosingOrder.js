@@ -17,7 +17,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
                 <Divider />
                 <Input.Group compact>
                     <Select placeholder={ordenSeleccionada.mesero} disabled style={{ width: 175 }}></Select>
-                    <Input style={{ width: '50%' }} disabled value={ordenSeleccionada.fecha}/>
+                    <Input style={{ width: '50%' }} disabled value={new Date (ordenSeleccionada.fecha)}/>
                 </Input.Group>
             </div>
         </div>
@@ -32,7 +32,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
                 <Divider />
                 <Input.Group compact>
                     <Select placeholder={historial.mesero} disabled style={{ width: 175 }}></Select>
-                    <Input style={{ width: '50%' }} disabled value={historial.fecha}/>
+                    <Input style={{ width: '50%' }} disabled value={new Date(historial.fecha)}/>
                 </Input.Group>
             </div>
         </div>
