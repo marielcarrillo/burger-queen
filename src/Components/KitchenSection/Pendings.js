@@ -1,11 +1,13 @@
 import React from 'react';
 import { Col, Row, Button } from 'antd';
 
-const Pendings = ({orders, getSelectedOrder}) => {
+const Pendings = ({orders, getSelectedOrder, historial}) => {
     return ( 
         <Col className='order' size='large' span={14}>
             <div>
-                <h3>Pendientes</h3>
+                {
+                    historial ? (<h3>Historial</h3>) : <h3>Pendientes</h3>
+                }
             </div>
             <Row className='pendings'>
                 {
