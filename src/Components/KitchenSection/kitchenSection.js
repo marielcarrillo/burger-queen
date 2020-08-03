@@ -35,7 +35,8 @@ const KitchenSection = () =>{
 
     const finishOrder = () => {
         db.collection('orders').doc(ordenSeleccionada.id).update({
-            status: 'finalizado'
+            status: true,
+            finish: Date.now()
         }).then(() => {
             console.log("Document successfully updated!");
         })
