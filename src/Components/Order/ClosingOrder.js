@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
-import moment from 'moment'
+
 
 
 
@@ -15,6 +15,17 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
         const minutes = Math.round((dif/1000)/60)
         return minutes
     }
+
+    // const showtimer =(historial) => {
+    //     const timeIn = historial.fecha;
+    //     const timeOut= historial.finish;
+    //     return 
+    //     if(timeIn || timeOut === undefined){
+    //         console.log('can not show timer')
+    //     }else {
+    //         return timer
+    //     }
+    // }
    
   
 
@@ -37,7 +48,9 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
     } else if (historial) {
         return (
             <div>
-                <h5>La orden se realizo en: {timer()} minutos</h5>
+                {
+                    timer() ?(<h6>La orden se realizo en: {timer()} minutos</h6>) : (<></>)
+                }
             <div>
                 <Divider />
                 <Input.Group compact>
@@ -61,7 +74,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
                         <Option value="Mesero1">Mesero 1</Option>
                         <Option value="Mesero2">Mesero 2</Option>
                     </Select>
-                    <Input style={{ width: '50%' }} disabled value={Date.now()}/>
+                    <Input style={{ width: '50%' }} disabled value={new Date()}/>
                 </Input.Group>
             </div>
         </div>
