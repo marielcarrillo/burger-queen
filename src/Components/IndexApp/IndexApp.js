@@ -29,10 +29,6 @@ function IndexApp () {
                         <li><Button value = 'Cocina' onClick={handleClickCocina}/></li>
                 </ul>
             </nav>
-            <div className='auth'>
-                <div>Inicia Sesión</div>
-                <div>Cierra Sesión</div>
-            </div> 
             
         </div>
         </Fragment>

@@ -1,9 +1,22 @@
 import React from 'react';
 import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
+import moment from 'moment'
+
+
 
 const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
     const { Option } = Select;
+    
+    const timer = () => {
+        const timeIn = historial.fecha;
+        const timeOut= historial.finish;
+        const dif = (timeOut - timeIn)
+        const minutes = Math.round((dif/1000)/60)
+        return minutes
+    }
+   
+  
 
     if (ordenSeleccionada) {
         return (
@@ -24,9 +37,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
     } else if (historial) {
         return (
             <div>
-                <div>
-                    <p>ok</p>
-                </div>
+                <h5>La orden se realizo en: {timer()} minutos</h5>
             <div>
                 <Divider />
                 <Input.Group compact>
