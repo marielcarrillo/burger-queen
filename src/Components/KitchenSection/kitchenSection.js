@@ -10,7 +10,7 @@ const KitchenSection = () =>{
     const [orders, setOrders] = useState([]);
 
     const getOrders = async () => {
-        let pendingOrders = db.collection('orders').where("status", "==", false);
+        let pendingOrders = db.collection('orders').where("status", "==", false).orderBy('fecha', 'desc');
         pendingOrders.onSnapshot((querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
