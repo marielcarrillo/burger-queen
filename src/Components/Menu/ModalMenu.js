@@ -24,7 +24,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
   const extras = useExtras(carrito.item.extras)
 
-  function useExtras(defaultExtra, carrito){
+  function useExtras(defaultExtra){
     
     const [ extras, setExtras] = useState(
       defaultExtra || getDefaultExtras()
@@ -35,14 +35,18 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         newExtras[i] = { ...newExtras[i], checked: !newExtras[i].checked}
         setExtras(newExtras)
     }
+
+    function resetExtras () {
+      setExtras(getDefaultExtras())
+    }
    
     return {
         checkExtra,
-        extras
+        extras,
+        resetExtras,
        
     }
 }
-
 
   function useQuantity(defaultQuantity) {
     const [value, setvalue] = useState(defaultQuantity || 1);
@@ -80,7 +84,8 @@ const ModalMenu = ({item, carrito, addProducto}) => {
   
     let addToOrder = () => {
       addProducto(order)
-
+      quantity.setvalue(quantity.value= 1)
+      extras.resetExtras()
       setState({
         visible: false,
       });
@@ -90,6 +95,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         setState({
         visible: false,
       });
+      extras.resetExtras()
     };
 
     function hasExtras(item) {
