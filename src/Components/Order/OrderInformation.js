@@ -19,14 +19,14 @@ const OrderInformation = ({carrito, clientName, handleChange, ordenSeleccionada,
         )
     } else {
         return (
-            <div><Select placeholder="Mesa" style={{ width: 175 }} onChange={handleChange}>
+            <div><Select placeholder="Mesa" style={{ width: 175 }} onChange={handleChange} value={carrito.mesa}>
                 <Option value="Mesa1">Mesa 1</Option>
                 <Option value="Mesa2">Mesa 2</Option>
                 <Option value="Mesa3" >Mesa 3</Option>
                 <Option value="Mesa4">Mesa 4</Option>
             </Select>
             <Input placeholder="Orden" disabled style={{ width: 175 }} value={'Orden: ' + carrito.orden} />
-            <Input placeholder="Nombre" onChange={clientName} /></div>
+            <Input placeholder="Nombre" onChange={clientName} value={carrito.nombreCliente}/></div>
         )
     }
 }

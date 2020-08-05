@@ -14,7 +14,7 @@ const Order = ({carrito, setCarrito, deleteProducto, total, guardar, clientName,
         <Col className='order' size='large' span={9} >
             <OrderInformation carrito={carrito} clientName={clientName} handleChange={handleChange} ordenSeleccionada={ordenSeleccionada} historial={historial} />
             <OrderContent carrito={carrito} deleteProducto={deleteProducto} nuevoCarrito={nuevoCarrito} ordenSeleccionada={ordenSeleccionada} historial={historial} />
-            <ClosingOrder total={total} guardar={guardar} mesero={mesero} ordenSeleccionada={ordenSeleccionada} finishOrder={finishOrder} historial={historial} />
+            <ClosingOrder total={total} guardar={guardar} mesero={mesero} ordenSeleccionada={ordenSeleccionada} finishOrder={finishOrder} historial={historial} carrito={carrito} />
         </Col>
      );
 }

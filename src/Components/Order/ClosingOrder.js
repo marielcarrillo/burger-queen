@@ -1,11 +1,8 @@
 import React from 'react';
 import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
-import moment from 'moment'
 
-
-
-const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
+const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
     const { Option } = Select;
     
     const timer = () => {
@@ -15,8 +12,6 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
         const minutes = Math.round((dif/1000)/60)
         return minutes
     }
-   
-  
 
     if (ordenSeleccionada) {
         return (
@@ -57,7 +52,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
             <div>
                 <Divider />
                 <Input.Group compact>
-                    <Select placeholder="Mesero" style={{ width: 175 }} onChange={mesero}>
+                    <Select placeholder="Mesero" style={{ width: 175 }} onChange={mesero} value={carrito.mesero}>
                         <Option value="Mesero1">Mesero 1</Option>
                         <Option value="Mesero2">Mesero 2</Option>
                     </Select>
