@@ -25,8 +25,8 @@ function IndexApp () {
             </div>       
             <nav>
                 <ul>
-                        <li><Button value = 'Orden' pink onClick={handleClickOrden} /></li>
-                        <li><Button value = 'Cocina' onClick={handleClickCocina}/></li>
+                        <li><Button className="animate" value = 'Orden' pink onClick={handleClickOrden} /></li>
+                        <li><Button className="animate" value = 'Cocina' onClick={handleClickCocina}/></li>
                 </ul>
             </nav>
             

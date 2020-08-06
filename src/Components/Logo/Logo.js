@@ -2,6 +2,7 @@ import React from 'react';
 import logoSmall from '../../Assets/logoSmall.png'
 import logo from '../../Assets/logoPrim.png'
 import { useHistory } from 'react-router-dom'
+import '../Logo/Logo.scss'
 
 const Logo = ({ small = false, big = false}) => {
     let src = logo
@@ -21,7 +22,7 @@ const Logo = ({ small = false, big = false}) => {
     }
    
     return(
-            <img src= {src} alt={alt} onClick={handleClick}></img>
+            <img className= {big ? 'bounce-in-fwd' : 'logosmall'} src= {src} alt={alt} onClick={handleClick}></img>
     )
   
 }

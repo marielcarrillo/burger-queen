@@ -83,6 +83,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
   
     let addToOrder = () => {
       addProducto(order)
+      quantity.setvalue(quantity.value= 1)
       extras.resetExtras();
       setState({
         visible: false,
@@ -90,7 +91,6 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     };
 
     let handleCancel = e => {
-      extras.resetExtras();
         setState({
         visible: false,
       });
