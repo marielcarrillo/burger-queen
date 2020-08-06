@@ -17,6 +17,17 @@ const OrderSection = () => {
     mesero: ""
   })
 
+  const initialStateCarrito = {
+    nombreCliente:"",
+    total:0,
+    item:[],
+    status:false,
+    pay:false,
+    mesa: "",
+    orden: (""+Math.random()).substring(2,7),
+    mesero: ""
+  }
+
   function addProducto(producto){
     setCarrito({...carrito, item:[...carrito.item,producto]})
   }
@@ -36,7 +47,8 @@ const OrderSection = () => {
   const guardar = async () => {
     carrito.fecha = Date.now()
     await db.collection('orders').doc().set(carrito);
-    console.log('added to firestore')
+    setCarrito({ ...initialStateCarrito })
+
 }
 const clientName = (e) => {
   let name = e.target.value;
@@ -44,7 +56,6 @@ const clientName = (e) => {
 }
 function handleChange(value) {
   setCarrito({...carrito,mesa: value})
-  console.log(`selected ${value}`);
 }
 console.log(carrito.item)
 const nuevoCarrito = {

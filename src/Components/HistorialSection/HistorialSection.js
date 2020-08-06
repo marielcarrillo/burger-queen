@@ -8,7 +8,7 @@ import Order from '../Order/Order';
 const HistorialSection = () =>{
     const [finishedOrders, setFinishedOrders] = useState([]);
     const getFinishedOrders = async () => {
-        let orders = db.collection('orders').where("status", "==", true);
+        let orders = db.collection('orders').where("status", "==", true).orderBy('finish', 'desc');
         orders.onSnapshot((querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
