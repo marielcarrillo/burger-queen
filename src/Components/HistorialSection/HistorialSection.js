@@ -31,11 +31,22 @@ const HistorialSection = () =>{
     }
     console.log(ordenSeleccionada);
 
+    const pagar = () => {
+        db.collection('orders').doc(ordenSeleccionada.id).update({
+            pay: true
+        }).then(() => {
+            console.log("Document successfully updated!");
+        })
+        .catch((error) => {
+            console.error("Error updating document: ", error);
+        });
+    }
+
     return(
         <Row className= 'content' justify='space-around'>
             <Header/>
             <Pendings historial orders={finishedOrders} getSelectedOrder={getSelectedOrder} />
-            <Order historial={ordenSeleccionada}  />
+            <Order historial={ordenSeleccionada} pagar={pagar}  />
         </Row>
     )
 }

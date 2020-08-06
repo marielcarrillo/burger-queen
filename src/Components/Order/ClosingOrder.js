@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, Select, Divider } from 'antd';
 import Button from '../Button/Button';
 
-const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
+const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finishOrder, historial, pagar}) => {
     const { Option } = Select;
     
     const timer = () => {
@@ -12,6 +12,8 @@ const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finis
         const minutes = Math.round((dif/1000)/60)
         return minutes
     }
+
+    
 
     if (ordenSeleccionada) {
         return (
@@ -32,7 +34,10 @@ const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finis
     } else if (historial) {
         return (
             <div>
-                <h5>La orden se realizo en: {timer()} minutos</h5>
+                {
+                    timer() ?(<h6>La orden se realizo en: {timer()} minutos</h6>) : (<></>)
+                }
+                <Button enter value = 'Pagar' onClick ={pagar}></Button>
             <div>
                 <Divider />
                 <Input.Group compact>
@@ -52,11 +57,11 @@ const ClosingOrder = ({carrito, total, guardar, mesero, ordenSeleccionada, finis
             <div>
                 <Divider />
                 <Input.Group compact>
-                    <Select placeholder="Mesero" style={{ width: 175 }} onChange={mesero} value={carrito.mesero}>
+                    <Select placeholder="Mesero" style={{ width: 175 }} onChange={mesero} value={carrito.mesero} >
                         <Option value="Mesero1">Mesero 1</Option>
                         <Option value="Mesero2">Mesero 2</Option>
                     </Select>
-                    <Input style={{ width: '50%' }} disabled value={Date.now()}/>
+                    <Input style={{ width: '50%' }} disabled value={new Date()}/>
                 </Input.Group>
             </div>
         </div>

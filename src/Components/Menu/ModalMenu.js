@@ -36,15 +36,14 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         setExtras(newExtras)
     }
 
-    function resetExtras () {
+    function resetExtras() {
       setExtras(getDefaultExtras())
     }
    
     return {
         checkExtra,
         extras,
-        resetExtras,
-       
+       resetExtras
     }
 }
 
@@ -85,7 +84,7 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     let addToOrder = () => {
       addProducto(order)
       quantity.setvalue(quantity.value= 1)
-      extras.resetExtras()
+      extras.resetExtras();
       setState({
         visible: false,
       });
