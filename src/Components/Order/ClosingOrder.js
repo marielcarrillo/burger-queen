@@ -5,7 +5,8 @@ import Button from '../Button/Button';
 
 
 
-const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, historial}) => {
+
+const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, historial,pagar}) => {
     const { Option } = Select;
     
     const timer = () => {
@@ -16,18 +17,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
         return minutes
     }
 
-    // const showtimer =(historial) => {
-    //     const timeIn = historial.fecha;
-    //     const timeOut= historial.finish;
-    //     return 
-    //     if(timeIn || timeOut === undefined){
-    //         console.log('can not show timer')
-    //     }else {
-    //         return timer
-    //     }
-    // }
-   
-  
+    
 
     if (ordenSeleccionada) {
         return (
@@ -51,6 +41,7 @@ const ClosingOrder = ({total, guardar, mesero, ordenSeleccionada, finishOrder, h
                 {
                     timer() ?(<h6>La orden se realizo en: {timer()} minutos</h6>) : (<></>)
                 }
+                <Button enter value = 'Pagar' onClick ={pagar}></Button>
             <div>
                 <Divider />
                 <Input.Group compact>

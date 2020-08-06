@@ -2,6 +2,11 @@ import React from 'react';
 import { Col, Row, Button } from 'antd';
 
 const Pendings = ({orders, getSelectedOrder, historial}) => {
+    
+    const style = {
+        backgroundColor: '#4B9935'
+    }
+
     return ( 
         <Col className='order' size='large' span={14}>
             <div>
@@ -13,7 +18,9 @@ const Pendings = ({orders, getSelectedOrder, historial}) => {
                 {
                     orders.map(order => (
                         <Col className='pendingOrders' key={order.id} span={14}>
-                            <Button type="primary" className='pendingOrderButton' onClick={() => getSelectedOrder(order.id)}>{order.orden} - {order.nombreCliente}</Button>
+
+                             <Button style={order.pay ? style : {}} type="primary" className='pendingOrderButton' onClick={() => getSelectedOrder(order.id)}>{order.orden} - {order.nombreCliente}</Button>
+                            
                         </Col>
                     )) 
                 }

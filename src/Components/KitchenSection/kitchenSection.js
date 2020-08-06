@@ -45,6 +45,8 @@ const KitchenSection = () =>{
         });
     }
 
+    
+
     return(
         <Row className= 'content' justify='space-around'>
             <Header/>

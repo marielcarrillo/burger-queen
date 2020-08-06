@@ -35,11 +35,15 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         newExtras[i] = { ...newExtras[i], checked: !newExtras[i].checked}
         setExtras(newExtras)
     }
+
+    function resetExtras() {
+      setExtras(getDefaultExtras())
+    }
    
     return {
         checkExtra,
-        extras
-       
+        extras,
+       resetExtras
     }
 }
 
@@ -80,13 +84,14 @@ const ModalMenu = ({item, carrito, addProducto}) => {
   
     let addToOrder = () => {
       addProducto(order)
-
+      extras.resetExtras();
       setState({
         visible: false,
       });
     };
 
     let handleCancel = e => {
+      extras.resetExtras();
         setState({
         visible: false,
       });
