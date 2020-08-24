@@ -10,7 +10,7 @@ La aplicación cuenta con dos menús y las secciones de Orden, donde el mesero p
 
 Se realizó con React y Ant Design, y Firestore como base de datos. Puede instalarse como aplicación, debido a que es una PWA (Progressive Web App) 
 
-Puedes consultar la demo <a href='burgerqueen-d2dca.web.app/'>aqui</a> (Para una visualización optima se recomienda configurar la vista para iPad modo horizontal, desde la opción "Herramientas del desarrollador").
+Puedes consultar la demo <a href='burgerqueen-d2dca.web.app/'>aquí</a> (Para una visualización optima se recomienda configurar la vista para iPad modo horizontal, desde la opción "Herramientas del desarrollador").
   
 ## Planificación 
 
@@ -28,5 +28,5 @@ La planificación se llevó a cabo en <a href='https://trello.com/b/wG5gWN45/bur
   
   Se realizaron prototipos de Alta y de <a href='https://www.figma.com/proto/Bc3hWHx2Dkoye8FR3iNKTW/BurgerQueen?scaling=scale-down&node-id=1%3A2'>Baja</a> fidelidad.
 
-  <img src='../src/Assets/recurso.png'>
+  <img src='./src/Assets/recurso.png'>
 
