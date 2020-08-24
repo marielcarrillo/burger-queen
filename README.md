@@ -28,5 +28,5 @@ La planificación se llevó a cabo en <a href='https://trello.com/b/wG5gWN45/bur
   
   Se realizaron prototipos de Alta y de <a href='https://www.figma.com/proto/Bc3hWHx2Dkoye8FR3iNKTW/BurgerQueen?scaling=scale-down&node-id=1%3A2'>Baja</a> fidelidad.
 
-  <img src='../src/Assets/recurso.png'>
+  <img src='../../src/Assets/recurso.png'>
 
