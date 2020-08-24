@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BurgerQueen ฅ^•ﻌ•^ฅ
 
-## Available Scripts
+## Resúmen del proyecto
 
-In the project directory, you can run:
+BurgerQueen es una  
 
-### `npm start`
+Es una interfaz para un pequeño restaurante de hamburguesas que está creciendo, el cual requiere poder tomar pedidos mediante una tablet para poder enviarlos a la cocina de manera ordenada.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+La aplicación cuenta con dos menús y las secciones de Orden, donde el mesero podrá realizar el pedido; Cocina donde podrán visualizar la orden seleccionada e indicar cuando se ha terminado de hacer; e Historial donde se indica que la orden ya fue pagada y se pueden consultar todas las ordenes que han sido ingresadas.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Se realizó con React y Ant Design, y Firestore como base de datos. Puede instalarse como aplicación, debido a que es una PWA (Progressive Web App) 
 
-### `npm test`
+Puedes consultar la demo <a href='burgerqueen-d2dca.web.app/'>aqui</a> (Para una visualización optima se recomienda configurar la vista para iPad modo horizontal, desde la opción "Herramientas del desarrollador").
+  
+## Planificación 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La planificación se llevó a cabo en <a href='https://trello.com/b/wG5gWN45/burger-queen'>trello</a> y se completo por historias de usuario
 
-### `npm run build`
+  ### Historias de usuario 
+  
+  * Yo como meserx quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Yo como jefx de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs que un pedido está listo para servirlo a un cliente.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  * Yo como meserx quiero ver los pedidos que están preparados para entregarlos rápidamente a los clientes que las hicieron.
+    
+  ### Prototipo
+  
+  Se realizaron prototipos de Alta y de <a href='https://www.figma.com/proto/Bc3hWHx2Dkoye8FR3iNKTW/BurgerQueen?scaling=scale-down&node-id=1%3A2'>Baja</a> fidelidad.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <img src='../src/Assets/recurso.png'>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
